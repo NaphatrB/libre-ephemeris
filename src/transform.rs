@@ -176,13 +176,13 @@ pub unsafe extern "C" fn le_cotrans(
 }
 
 // Placeholder: retrieve desired conversion direction.
-// In the full implementation this would be driven by oe_cotrans_sp or
+// In the full implementation this would be driven by le_cotrans_sp or
 // a dedicated flag parameter.
 fn desired_flags() -> i32 { 0 }
 
 /// C ABI: coordinate transformation for speed vectors (6-vector).
 #[no_mangle]
-pub unsafe extern "C" fn oe_cotrans_sp(
+pub unsafe extern "C" fn le_cotrans_sp(
     x: *const f64, y: *const f64, z: *const f64,
     eps: f64,
     xout: *mut f64, yout: *mut f64, zout: *mut f64,
@@ -192,7 +192,7 @@ pub unsafe extern "C" fn oe_cotrans_sp(
 
 /// C ABI: split decimal degrees.
 #[no_mangle]
-pub unsafe extern "C" fn oe_split_deg(
+pub unsafe extern "C" fn le_split_deg(
     ddeg: f64, _roundflag: i32,
     ideg: *mut i32, imin: *mut i32, isec: *mut f64, dsecfrac: *mut f64,
 ) {
@@ -209,13 +209,13 @@ pub unsafe extern "C" fn oe_split_deg(
 
 /// C ABI: normalize angle to [0, 360).
 #[no_mangle]
-pub unsafe extern "C" fn oe_csnorm(d: f64) -> f64 {
+pub unsafe extern "C" fn le_csnorm(d: f64) -> f64 {
     csnorm(d)
 }
 
 /// C ABI: difference of two angles.
 #[no_mangle]
-pub unsafe extern "C" fn oe_difdeg2n(d1: f64, d2: f64) -> f64 {
+pub unsafe extern "C" fn le_difdeg2n(d1: f64, d2: f64) -> f64 {
     difdeg2n(d1, d2)
 }
 

@@ -244,7 +244,7 @@ fn test_regression_ayanamsa() {
         // Ayanamsa: only compare dates where precession models agree (1700-2100 CE)
         if jd_ut < 2342000.0 || jd_ut > 2480000.0 { continue; }
         let aya_swetest: f64 = row[1].parse().unwrap();
-        let aya_our = unsafe { libre_ephemeris::ayanamsa::oe_get_ayanamsa(jd_ut) };
+        let aya_our = unsafe { libre_ephemeris::ayanamsa::le_get_ayanamsa(jd_ut) };
         let aya_our_norm = aya_our.rem_euclid(360.0);
         let aya_swetest_norm = aya_swetest.rem_euclid(360.0);
         let diff = (aya_our_norm - aya_swetest_norm).abs().min(360.0 - (aya_our_norm - aya_swetest_norm).abs());
@@ -292,7 +292,7 @@ fn planet_name(ipl: i32) -> &'static str {
 }
 
 #[test]
-fn test_oe_calc_vs_vsop87_heliocentric() {
+fn test_le_calc_vs_vsop87_heliocentric() {
     let jde = 2451545.0;
     // HELIO | XYZ | J2000 | NOABERR | NOGDEFL | NOBIRR | NONUT
     let flags = 0x0010 | 0x0080 | 0x1000 | 0x0200 | 0x0400 | 0x0800 | 0x100000;
@@ -322,7 +322,7 @@ fn test_oe_calc_vs_vsop87_heliocentric() {
 }
 
 #[test]
-fn test_oe_calc_frame_bias_vs_no_bias() {
+fn test_le_calc_frame_bias_vs_no_bias() {
     let jde = 2451545.0;
     let base = 0x0010 | 0x0080 | 0x0200 | 0x0400 | 0x0800 | 0x100000; // HELIO | XYZ | NOABERR | NOGDEFL | NOBIRR | NONUT
 
@@ -350,7 +350,7 @@ fn test_oe_calc_frame_bias_vs_no_bias() {
 }
 
 #[test]
-fn test_oe_calc_sun_heliocentric() {
+fn test_le_calc_sun_heliocentric() {
     let jde = 2451545.0;
     // HELIO | XYZ | J2000 | NOABERR | NOGDEFL | NOBIRR | NONUT
     let flags = 0x0010 | 0x0080 | 0x1000 | 0x0200 | 0x0400 | 0x0800 | 0x100000;
@@ -363,7 +363,7 @@ fn test_oe_calc_sun_heliocentric() {
 }
 
 #[test]
-fn test_oe_calc_sun_barycentric() {
+fn test_le_calc_sun_barycentric() {
     let jde = 2451545.0;
     // BARYHEL | XYZ | J2000 | NOABERR | NOGDEFL | NOBIRR | NONUT
     let flags = 0x0020 | 0x0080 | 0x1000 | 0x0200 | 0x0400 | 0x0800 | 0x100000;
@@ -377,7 +377,7 @@ fn test_oe_calc_sun_barycentric() {
 }
 
 #[test]
-fn test_oe_calc_earth_heliocentric() {
+fn test_le_calc_earth_heliocentric() {
     let jde = 2451545.0;
     let flags = 0x0010 | 0x0080 | 0x1000 | 0x0200 | 0x0400 | 0x0800 | 0x100000;
     let mut xx = [0.0_f64; 24];
@@ -389,7 +389,7 @@ fn test_oe_calc_earth_heliocentric() {
 }
 
 #[test]
-fn test_oe_calc_mercury_heliocentric_xyz() {
+fn test_le_calc_mercury_heliocentric_xyz() {
     let jde = 2451545.0;
     let flags = 0x0010 | 0x0080 | 0x1000 | 0x0200 | 0x0400 | 0x0800 | 0x100000;
     let mut xx = [0.0_f64; 24];
@@ -406,7 +406,7 @@ fn test_oe_calc_mercury_heliocentric_xyz() {
 
 #[test]
 fn test_sanity_julian_day() {
-    let jd = unsafe { libre_ephemeris::calendar::oe_julday(2000, 1, 1.5, 1) };
+    let jd = unsafe { libre_ephemeris::calendar::le_julday(2000, 1, 1.5, 1) };
     assert!((jd - 2451545.0).abs() < 1e-9);
 }
 
@@ -461,7 +461,7 @@ fn test_sanity_version() {
 
 #[test]
 fn test_sanity_day_of_week() {
-    let dow = unsafe { libre_ephemeris::calendar::oe_day_of_week(2451545.0) };
+    let dow = unsafe { libre_ephemeris::calendar::le_day_of_week(2451545.0) };
     assert_eq!(dow, 6);
 }
 
@@ -503,7 +503,7 @@ fn test_sanity_deltat_j2000() {
 
 #[test]
 fn test_sanity_ayanamsa_at_j2000() {
-    let aya = unsafe { libre_ephemeris::ayanamsa::oe_get_ayanamsa(constants::LE_J2000) };
+    let aya = unsafe { libre_ephemeris::ayanamsa::le_get_ayanamsa(constants::LE_J2000) };
     assert!(!aya.is_nan());
     assert!(aya > 0.0 && aya < 360.0, "Ayanamsa at J2000 = {} out of range", aya);
 }

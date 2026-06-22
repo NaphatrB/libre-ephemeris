@@ -107,101 +107,101 @@
 
 #define LE_EQ_HEL 8192
 
-#define OE_HOR 16384
+#define LE_HOR 16384
 
 #define LE_SIDM_FAGAN_BRADLEY 0
 
-#define OE_SIDM_LAHIRI 1
+#define LE_SIDM_LAHIRI 1
 
-#define OE_SIDM_DELUCE 2
+#define LE_SIDM_DELUCE 2
 
-#define OE_SIDM_RAMAN 3
+#define LE_SIDM_RAMAN 3
 
-#define OE_SIDM_USHASHASHI 4
+#define LE_SIDM_USHASHASHI 4
 
-#define OE_SIDM_KRISHNAMURTI 5
+#define LE_SIDM_KRISHNAMURTI 5
 
-#define OE_SIDM_DJWHAL_KHUL 6
+#define LE_SIDM_DJWHAL_KHUL 6
 
-#define OE_SIDM_YUKTESHWAR 7
+#define LE_SIDM_YUKTESHWAR 7
 
-#define OE_SIDM_JN_BHASIN 8
+#define LE_SIDM_JN_BHASIN 8
 
-#define OE_SIDM_BABYLONIAN_KUGLER1 9
+#define LE_SIDM_BABYLONIAN_KUGLER1 9
 
-#define OE_SIDM_BABYLONIAN_KUGLER2 10
+#define LE_SIDM_BABYLONIAN_KUGLER2 10
 
-#define OE_SIDM_BABYLONIAN_KUGLER3 11
+#define LE_SIDM_BABYLONIAN_KUGLER3 11
 
-#define OE_SIDM_BABYLONIAN_HUBER 12
+#define LE_SIDM_BABYLONIAN_HUBER 12
 
-#define OE_SIDM_BABYLONIAN_ETPSC 13
+#define LE_SIDM_BABYLONIAN_ETPSC 13
 
-#define OE_SIDM_ALDEBARAN_15TAU 14
+#define LE_SIDM_ALDEBARAN_15TAU 14
 
-#define OE_SIDM_HIPPARCHUS 15
+#define LE_SIDM_HIPPARCHUS 15
 
-#define OE_SIDM_SASSANIAN 16
+#define LE_SIDM_SASSANIAN 16
 
-#define OE_SIDM_GALACTIC_CENTER_0SAG 17
+#define LE_SIDM_GALACTIC_CENTER_0SAG 17
 
-#define OE_SIDM_J2000 18
+#define LE_SIDM_J2000 18
 
-#define OE_SIDM_J1900 19
+#define LE_SIDM_J1900 19
 
-#define OE_SIDM_B1950 20
+#define LE_SIDM_B1950 20
 
-#define OE_SIDM_SURYASIDDHANTA 21
+#define LE_SIDM_SURYASIDDHANTA 21
 
-#define OE_SIDM_ARYABHATA 22
+#define LE_SIDM_ARYABHATA 22
 
-#define OE_SIDM_SS_CHITRAPAKSHA 23
+#define LE_SIDM_SS_CHITRAPAKSHA 23
 
-#define OE_SIDM_SS_REVATI 24
+#define LE_SIDM_SS_REVATI 24
 
-#define OE_SIDM_TRUE_CITRA 25
+#define LE_SIDM_TRUE_CITRA 25
 
-#define OE_SIDM_TRUE_REVATI 26
+#define LE_SIDM_TRUE_REVATI 26
 
-#define OE_SIDM_TRUE_PUSHYA 27
+#define LE_SIDM_TRUE_PUSHYA 27
 
-#define OE_SIDM_TRUE_ASHVINI 28
+#define LE_SIDM_TRUE_ASHVINI 28
 
-#define OE_SIDM_TRUE_MAGHA 29
+#define LE_SIDM_TRUE_MAGHA 29
 
-#define OE_SIDM_TRUE_MULA 30
+#define LE_SIDM_TRUE_MULA 30
 
-#define OE_SIDM_GALCENT_CENTER_0SAG 31
+#define LE_SIDM_GALCENT_CENTER_0SAG 31
 
-#define OE_SIDM_GALCENT_MULA 32
+#define LE_SIDM_GALCENT_MULA 32
 
-#define OE_SIDM_GALCENT_RADIO_0SAG 33
+#define LE_SIDM_GALCENT_RADIO_0SAG 33
 
-#define OE_SIDM_GALCENT_0CAP 34
+#define LE_SIDM_GALCENT_0CAP 34
 
-#define OE_SIDM_TRUE_ANTARES 35
+#define LE_SIDM_TRUE_ANTARES 35
 
-#define OE_SIDM_TRUE_FOMALHAUT 36
+#define LE_SIDM_TRUE_FOMALHAUT 36
 
-#define OE_SIDM_VALENTINE 37
+#define LE_SIDM_VALENTINE 37
 
-#define OE_SIDM_USER 38
+#define LE_SIDM_USER 38
 
-#define OE_SIDM_LARGE 39
+#define LE_SIDM_LARGE 39
 
-#define OE_SIDM_TRUE_ALDEBARAN 40
+#define LE_SIDM_TRUE_ALDEBARAN 40
 
-#define OE_SIDM_STEINER_SET 41
+#define LE_SIDM_STEINER_SET 41
 
-#define OE_SIDM_RAMAN_A 42
+#define LE_SIDM_RAMAN_A 42
 
-#define OE_SIDM_SURYAPAKSHA_A 43
+#define LE_SIDM_SURYAPAKSHA_A 43
 
-#define OE_SIDM_TRUE_VEGA 44
+#define LE_SIDM_TRUE_VEGA 44
 
-#define OE_SIDM_TRUE_ZETA_PSC 45
+#define LE_SIDM_TRUE_ZETA_PSC 45
 
-#define OE_SIDM_SURYAPAKSHA_B 46
+#define LE_SIDM_SURYAPAKSHA_B 46
 
 #define LE_NMODES_AYANAMSA 47
 
@@ -251,23 +251,23 @@
 
 #define LE_DT_SCHOCH 4
 
-#define OE_DT_USER 5
+#define LE_DT_USER 5
 
 #define LE_NMODES_DT 6
 
-#define OE_ST_IAU_1976 0
+#define LE_ST_IAU_1976 0
 
 #define LE_ST_IAU_2006 1
 
-#define OE_ST_IERS_2010 2
+#define LE_ST_IERS_2010 2
 
-#define OE_ST_LONG_TERM 3
+#define LE_ST_LONG_TERM 3
 
 #define LE_NMODES_ST 4
 
-#define OE_BIAS_NONE 0
+#define LE_BIAS_NONE 0
 
-#define OE_BIAS_IAU_2000 1
+#define LE_BIAS_IAU_2000 1
 
 #define LE_BIAS_IAU_2006 2
 
@@ -275,13 +275,13 @@
 
 #define LE_HOR_APPROX_NONE 0
 
-#define OE_HOR_APPROX_STANDARD 1
+#define LE_HOR_APPROX_STANDARD 1
 
-#define OE_HOR_APPROX_REFINED 2
+#define LE_HOR_APPROX_REFINED 2
 
 #define LE_OK 0
 
-#define OE_ERR -1
+#define LE_ERR -1
 
 #define LE_ERR_INVALID_PARAMS -2
 
@@ -323,9 +323,9 @@
 
 #define LE_DIST 2
 
-#define OE_RA_DOT 3
+#define LE_RA_DOT 3
 
-#define OE_DEC_DOT 4
+#define LE_DEC_DOT 4
 
 #define LE_DIST_DOT 5
 
@@ -353,11 +353,11 @@
 
 #define LE_J1900 2415020.0
 
-#define OE_DAY_PER_YEAR 365.25
+#define LE_DAY_PER_YEAR 365.25
 
 #define LE_DAY_PER_CENTURY 36525.0
 
-#define OE_DAY_PER_MILLENNIUM 365250.0
+#define LE_DAY_PER_MILLENNIUM 365250.0
 
 #define LE_DEG 0.017453292519943295
 
@@ -488,7 +488,7 @@ void le_set_topo(double geolon, double geolat, double geoalt);
 /**
  * C ABI: set sidereal (ayanamsa) mode.
  */
-void oe_set_sid_mode(int32_t sid_mode, double t0, double ayan_t0);
+void le_set_sid_mode(int32_t sid_mode, double t0, double ayan_t0);
 
 /**
  * C ABI: override Delta T (TT - UT) in seconds.
@@ -498,7 +498,7 @@ void le_set_delta_t_user(double dt);
 /**
  * C ABI: set tidal acceleration (arcsec/cy²).
  */
-void oe_set_tid_acc(double acc);
+void le_set_tid_acc(double acc);
 
 /**
  * C ABI: load a VSOP2013 data file for a given planet (1 = Mercury .. 9 = Pluto).
@@ -532,18 +532,18 @@ const int8_t *le_version(void);
 /**
  * Convert date to Julian day number, Gregorian calendar assumed.
  */
-double oe_julday(int32_t year, int32_t month, double day, int32_t gregflag);
+double le_julday(int32_t year, int32_t month, double day, int32_t gregflag);
 
 /**
  * Convert Julian day number to calendar date.
  */
-void oe_revjul(double jd, int32_t gregflag, int32_t *year, int32_t *month, double *day);
+void le_revjul(double jd, int32_t gregflag, int32_t *year, int32_t *month, double *day);
 
 /**
  * Compute day of week from Julian day.
  * Returns 0=Monday ... 6=Sunday.
  */
-int32_t oe_day_of_week(double jd);
+int32_t le_day_of_week(double jd);
 
 /**
  * C ABI: coordinate transformation between systems.
@@ -564,7 +564,7 @@ void le_cotrans(const double *x,
 /**
  * C ABI: coordinate transformation for speed vectors (6-vector).
  */
-void oe_cotrans_sp(const double *x,
+void le_cotrans_sp(const double *x,
                    const double *y,
                    const double *z,
                    double eps,
@@ -575,7 +575,7 @@ void oe_cotrans_sp(const double *x,
 /**
  * C ABI: split decimal degrees.
  */
-void oe_split_deg(double ddeg,
+void le_split_deg(double ddeg,
                   int32_t _roundflag,
                   int32_t *ideg,
                   int32_t *imin,
@@ -585,12 +585,12 @@ void oe_split_deg(double ddeg,
 /**
  * C ABI: normalize angle to [0, 360).
  */
-double oe_csnorm(double d);
+double le_csnorm(double d);
 
 /**
  * C ABI: difference of two angles.
  */
-double oe_difdeg2n(double d1, double d2);
+double le_difdeg2n(double d1, double d2);
 
 /**
  * C ABI: main ephemeris calculation (ET input).
@@ -606,7 +606,7 @@ int32_t le_calc(double tjd, int32_t ipl, int32_t iflag, double *xx, int8_t *serr
  * # Arguments
  * * `tjd_ut` - Julian day in Universal Time
  * * `ipl` - Planet index (0=Sun, 1=Moon, 2=Mercury, ..., 9=Pluto, 10=Chiron, 17=Earth)
- * * `iflag` - Bitmask of OE_FLG_* flags controlling output frame, coordinate system, corrections
+ * * `iflag` - Bitmask of LE_FLG_* flags controlling output frame, coordinate system, corrections
  * * `xx` - Output array of 24 doubles: [x, y, z, vx, vy, vz, ...]
  * * `serr` - Error string buffer (256 bytes), zeroed on success
  *
@@ -634,12 +634,12 @@ int32_t le_calc_ut(double tjd_ut, int32_t ipl, int32_t iflag, double *xx, int8_t
 /**
  * C ABI: solar eclipse calculation.
  */
-int32_t oe_sol_eclipse_how(double tjd, int32_t _iflag, double *attr, int8_t *serr);
+int32_t le_sol_eclipse_how(double tjd, int32_t _iflag, double *attr, int8_t *serr);
 
 /**
  * C ABI: lunar eclipse calculation.
  */
-int32_t oe_lun_eclipse_how(double tjd, int32_t _iflag, double *attr, int8_t *serr);
+int32_t le_lun_eclipse_how(double tjd, int32_t _iflag, double *attr, int8_t *serr);
 
 /**
  * C ABI: compute Delta T (TT - UT) in seconds for a given UT Julian day.
@@ -654,17 +654,17 @@ double le_deltat_ex(double tjd, int32_t _iflag, int8_t *serr);
 /**
  * C ABI: compute ayanamsa.
  */
-double oe_get_ayanamsa(double tjd_et);
+double le_get_ayanamsa(double tjd_et);
 
 /**
  * C ABI: compute ayanamsa with error string.
  */
-double oe_get_ayanamsa_ex(double tjd_et, int32_t _iflag, int8_t *serr);
+double le_get_ayanamsa_ex(double tjd_et, int32_t _iflag, int8_t *serr);
 
 /**
  * C ABI: get ayanamsa name.
  */
-const int8_t *oe_get_ayanamsa_name(int32_t isidmode);
+const int8_t *le_get_ayanamsa_name(int32_t isidmode);
 
 /**
  * C ABI: compute houses.
@@ -714,12 +714,12 @@ int32_t le_fixstar(const int8_t *star_name, double jd_et, int32_t iflag, double 
 /**
  * C ABI: get star count in catalog.
  */
-int32_t oe_star_count(void);
+int32_t le_star_count(void);
 
 /**
  * C ABI: get star data by index.
  */
-int32_t oe_star_data(int32_t index, struct LeStar *star_out);
+int32_t le_star_data(int32_t index, struct LeStar *star_out);
 
 /**
  * C ABI: compute rise, set, or transit time.

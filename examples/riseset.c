@@ -8,7 +8,7 @@ int main() {
     // Zurich: 47.4°N, 8.5°E
     double lat = 47.4;
     double lon = 8.5;
-    double jd_ut = oe_julday(2026, 6, 22, 1);
+    double jd_ut = le_julday(2026, 6, 22, 1);
 
     char serr[256];
     double xx[24];

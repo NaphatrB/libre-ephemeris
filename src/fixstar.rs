@@ -158,13 +158,13 @@ pub unsafe extern "C" fn le_fixstar(
 
 /// C ABI: get star count in catalog.
 #[no_mangle]
-pub unsafe extern "C" fn oe_star_count() -> i32 {
+pub unsafe extern "C" fn le_star_count() -> i32 {
     LE_STAR_COUNT as i32
 }
 
 /// C ABI: get star data by index.
 #[no_mangle]
-pub unsafe extern "C" fn oe_star_data(index: i32, star_out: *mut LeStar) -> i32 {
+pub unsafe extern "C" fn le_star_data(index: i32, star_out: *mut LeStar) -> i32 {
     if index < 0 || index >= LE_STAR_COUNT as i32 {
         return constants::ERR_OUT_OF_RANGE;
     }

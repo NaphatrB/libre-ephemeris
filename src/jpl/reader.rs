@@ -199,7 +199,7 @@ impl JplFile {
 
     /// Compute body position for a given Julian date and body index.
     ///
-    /// Body index mapping (matching OE_ constants):
+    /// Body index mapping (matching LE_ constants):
     ///   0 = Mercury, 1 = Venus, 2 = Earth-Moon barycenter,
     ///   3 = Mars, 4 = Jupiter, 5 = Saturn, 6 = Uranus,
     ///   7 = Neptune, 8 = Pluto, 9 = Moon (geocentric), 10 = Sun,

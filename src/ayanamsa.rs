@@ -129,7 +129,7 @@ const AYANAMSA_TABLE: &[AyaDef] = &[
 
 /// Compute ayanamsa (sidereal offset) in degrees for given Julian day and mode.
 pub fn compute_ayanamsa(jd_et: f64, sid_mode: &LeSidData) -> f64 {
-    if sid_mode.mode == constants::OE_SIDM_USER {
+    if sid_mode.mode == constants::LE_SIDM_USER {
         // User-defined: use provided t0 and ayan_t0
         let t = (jd_et - sid_mode.t0) / constants::LE_DAY_PER_CENTURY;
         // Precession-based drift from user's epoch to target date
@@ -154,7 +154,7 @@ pub fn compute_ayanamsa(jd_et: f64, sid_mode: &LeSidData) -> f64 {
 
 /// C ABI: compute ayanamsa.
 #[no_mangle]
-pub unsafe extern "C" fn oe_get_ayanamsa(tjd_et: f64) -> f64 {
+pub unsafe extern "C" fn le_get_ayanamsa(tjd_et: f64) -> f64 {
     crate::context::with_default(|ctx| {
         compute_ayanamsa(tjd_et, &ctx.sid_mode)
     })
@@ -162,8 +162,8 @@ pub unsafe extern "C" fn oe_get_ayanamsa(tjd_et: f64) -> f64 {
 
 /// C ABI: compute ayanamsa with error string.
 #[no_mangle]
-pub unsafe extern "C" fn oe_get_ayanamsa_ex(tjd_et: f64, _iflag: i32, serr: *mut i8) -> f64 {
-    let aya = oe_get_ayanamsa(tjd_et);
+pub unsafe extern "C" fn le_get_ayanamsa_ex(tjd_et: f64, _iflag: i32, serr: *mut i8) -> f64 {
+    let aya = le_get_ayanamsa(tjd_et);
     if !serr.is_null() {
         unsafe { *serr = 0; }
     }
@@ -172,7 +172,7 @@ pub unsafe extern "C" fn oe_get_ayanamsa_ex(tjd_et: f64, _iflag: i32, serr: *mut
 
 /// C ABI: get ayanamsa name.
 #[no_mangle]
-pub unsafe extern "C" fn oe_get_ayanamsa_name(isidmode: i32) -> *const i8 {
+pub unsafe extern "C" fn le_get_ayanamsa_name(isidmode: i32) -> *const i8 {
     let names = [
         "Fagan-Bradley\0",
         "Lahiri\0",

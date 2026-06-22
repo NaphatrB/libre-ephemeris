@@ -6,7 +6,7 @@
 #include <math.h>
 
 int main() {
-    double jd_ut = oe_julday(2026, 6, 22.5, 1);
+    double jd_ut = le_julday(2026, 6, 22.5, 1);
     double xx[24];
     char serr[256];
 

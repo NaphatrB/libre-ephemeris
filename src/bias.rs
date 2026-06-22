@@ -73,8 +73,8 @@ pub fn frame_bias_matrix() -> LeMat3 {
 /// Apply frame bias to a position vector (ICRS -> FK5).
 pub fn apply_frame_bias(pos: &[f64; 3], bias_model: i32) -> [f64; 3] {
     match bias_model {
-        constants::OE_BIAS_NONE => *pos,
-        constants::OE_BIAS_IAU_2000 | constants::LE_BIAS_IAU_2006 => {
+        constants::LE_BIAS_NONE => *pos,
+        constants::LE_BIAS_IAU_2000 | constants::LE_BIAS_IAU_2006 => {
             frame_bias_matrix().transform(pos)
         }
         _ => *pos,

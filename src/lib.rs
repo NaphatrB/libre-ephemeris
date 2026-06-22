@@ -31,7 +31,7 @@
 //! - **JPL**: Reads NASA DE ephemeris binary files (DE430/431/441) directly
 //! - **Analytical**: Uses VSOP2013/ELP-MPP02 trigonometric series (zero-file dependency)
 //!
-//! The primary API is C-compatible via `extern "C"` functions with the `oe_` prefix.
+//! The primary API is C-compatible via `extern "C"` functions with the `le_` prefix.
 //! Rust consumers can also use the internal modules directly.
 
 pub mod constants;

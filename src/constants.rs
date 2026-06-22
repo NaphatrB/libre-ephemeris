@@ -80,56 +80,56 @@ pub const LE_ECL_MAG: i32 = 1024;
 pub const LE_ECL_BARY: i32 = 2048;
 pub const LE_EQ_GEO: i32 = 4096;
 pub const LE_EQ_HEL: i32 = 8192;
-pub const OE_HOR: i32 = 16384;
+pub const LE_HOR: i32 = 16384;
 
 // Sidereal / ayanamsa modes
 pub const LE_SIDM_FAGAN_BRADLEY: i32 = 0;
-pub const OE_SIDM_LAHIRI: i32 = 1;
-pub const OE_SIDM_DELUCE: i32 = 2;
-pub const OE_SIDM_RAMAN: i32 = 3;
-pub const OE_SIDM_USHASHASHI: i32 = 4;
-pub const OE_SIDM_KRISHNAMURTI: i32 = 5;
-pub const OE_SIDM_DJWHAL_KHUL: i32 = 6;
-pub const OE_SIDM_YUKTESHWAR: i32 = 7;
-pub const OE_SIDM_JN_BHASIN: i32 = 8;
-pub const OE_SIDM_BABYLONIAN_KUGLER1: i32 = 9;
-pub const OE_SIDM_BABYLONIAN_KUGLER2: i32 = 10;
-pub const OE_SIDM_BABYLONIAN_KUGLER3: i32 = 11;
-pub const OE_SIDM_BABYLONIAN_HUBER: i32 = 12;
-pub const OE_SIDM_BABYLONIAN_ETPSC: i32 = 13;
-pub const OE_SIDM_ALDEBARAN_15TAU: i32 = 14;
-pub const OE_SIDM_HIPPARCHUS: i32 = 15;
-pub const OE_SIDM_SASSANIAN: i32 = 16;
-pub const OE_SIDM_GALACTIC_CENTER_0SAG: i32 = 17;
-pub const OE_SIDM_J2000: i32 = 18;
-pub const OE_SIDM_J1900: i32 = 19;
-pub const OE_SIDM_B1950: i32 = 20;
-pub const OE_SIDM_SURYASIDDHANTA: i32 = 21;
-pub const OE_SIDM_ARYABHATA: i32 = 22;
-pub const OE_SIDM_SS_CHITRAPAKSHA: i32 = 23;
-pub const OE_SIDM_SS_REVATI: i32 = 24;
-pub const OE_SIDM_TRUE_CITRA: i32 = 25;
-pub const OE_SIDM_TRUE_REVATI: i32 = 26;
-pub const OE_SIDM_TRUE_PUSHYA: i32 = 27;
-pub const OE_SIDM_TRUE_ASHVINI: i32 = 28;
-pub const OE_SIDM_TRUE_MAGHA: i32 = 29;
-pub const OE_SIDM_TRUE_MULA: i32 = 30;
-pub const OE_SIDM_GALCENT_CENTER_0SAG: i32 = 31;
-pub const OE_SIDM_GALCENT_MULA: i32 = 32;
-pub const OE_SIDM_GALCENT_RADIO_0SAG: i32 = 33;
-pub const OE_SIDM_GALCENT_0CAP: i32 = 34;
-pub const OE_SIDM_TRUE_ANTARES: i32 = 35;
-pub const OE_SIDM_TRUE_FOMALHAUT: i32 = 36;
-pub const OE_SIDM_VALENTINE: i32 = 37;
-pub const OE_SIDM_USER: i32 = 38;
-pub const OE_SIDM_LARGE: i32 = 39;
-pub const OE_SIDM_TRUE_ALDEBARAN: i32 = 40;
-pub const OE_SIDM_STEINER_SET: i32 = 41;
-pub const OE_SIDM_RAMAN_A: i32 = 42;
-pub const OE_SIDM_SURYAPAKSHA_A: i32 = 43;
-pub const OE_SIDM_TRUE_VEGA: i32 = 44;
-pub const OE_SIDM_TRUE_ZETA_PSC: i32 = 45;
-pub const OE_SIDM_SURYAPAKSHA_B: i32 = 46;
+pub const LE_SIDM_LAHIRI: i32 = 1;
+pub const LE_SIDM_DELUCE: i32 = 2;
+pub const LE_SIDM_RAMAN: i32 = 3;
+pub const LE_SIDM_USHASHASHI: i32 = 4;
+pub const LE_SIDM_KRISHNAMURTI: i32 = 5;
+pub const LE_SIDM_DJWHAL_KHUL: i32 = 6;
+pub const LE_SIDM_YUKTESHWAR: i32 = 7;
+pub const LE_SIDM_JN_BHASIN: i32 = 8;
+pub const LE_SIDM_BABYLONIAN_KUGLER1: i32 = 9;
+pub const LE_SIDM_BABYLONIAN_KUGLER2: i32 = 10;
+pub const LE_SIDM_BABYLONIAN_KUGLER3: i32 = 11;
+pub const LE_SIDM_BABYLONIAN_HUBER: i32 = 12;
+pub const LE_SIDM_BABYLONIAN_ETPSC: i32 = 13;
+pub const LE_SIDM_ALDEBARAN_15TAU: i32 = 14;
+pub const LE_SIDM_HIPPARCHUS: i32 = 15;
+pub const LE_SIDM_SASSANIAN: i32 = 16;
+pub const LE_SIDM_GALACTIC_CENTER_0SAG: i32 = 17;
+pub const LE_SIDM_J2000: i32 = 18;
+pub const LE_SIDM_J1900: i32 = 19;
+pub const LE_SIDM_B1950: i32 = 20;
+pub const LE_SIDM_SURYASIDDHANTA: i32 = 21;
+pub const LE_SIDM_ARYABHATA: i32 = 22;
+pub const LE_SIDM_SS_CHITRAPAKSHA: i32 = 23;
+pub const LE_SIDM_SS_REVATI: i32 = 24;
+pub const LE_SIDM_TRUE_CITRA: i32 = 25;
+pub const LE_SIDM_TRUE_REVATI: i32 = 26;
+pub const LE_SIDM_TRUE_PUSHYA: i32 = 27;
+pub const LE_SIDM_TRUE_ASHVINI: i32 = 28;
+pub const LE_SIDM_TRUE_MAGHA: i32 = 29;
+pub const LE_SIDM_TRUE_MULA: i32 = 30;
+pub const LE_SIDM_GALCENT_CENTER_0SAG: i32 = 31;
+pub const LE_SIDM_GALCENT_MULA: i32 = 32;
+pub const LE_SIDM_GALCENT_RADIO_0SAG: i32 = 33;
+pub const LE_SIDM_GALCENT_0CAP: i32 = 34;
+pub const LE_SIDM_TRUE_ANTARES: i32 = 35;
+pub const LE_SIDM_TRUE_FOMALHAUT: i32 = 36;
+pub const LE_SIDM_VALENTINE: i32 = 37;
+pub const LE_SIDM_USER: i32 = 38;
+pub const LE_SIDM_LARGE: i32 = 39;
+pub const LE_SIDM_TRUE_ALDEBARAN: i32 = 40;
+pub const LE_SIDM_STEINER_SET: i32 = 41;
+pub const LE_SIDM_RAMAN_A: i32 = 42;
+pub const LE_SIDM_SURYAPAKSHA_A: i32 = 43;
+pub const LE_SIDM_TRUE_VEGA: i32 = 44;
+pub const LE_SIDM_TRUE_ZETA_PSC: i32 = 45;
+pub const LE_SIDM_SURYAPAKSHA_B: i32 = 46;
 pub const LE_NMODES_AYANAMSA: i32 = 47;
 
 // Precession model IDs
@@ -160,30 +160,30 @@ pub const LE_DT_STEPHENSON_1997: i32 = 1;
 pub const LE_DT_ESPENAK_MEEUS_2006: i32 = 2;
 pub const LE_DT_STEPHENSON_2016: i32 = 3;
 pub const LE_DT_SCHOCH: i32 = 4;
-pub const OE_DT_USER: i32 = 5;
+pub const LE_DT_USER: i32 = 5;
 pub const LE_NMODES_DT: i32 = 6;
 
 // Sidereal time model IDs
-pub const OE_ST_IAU_1976: i32 = 0;
+pub const LE_ST_IAU_1976: i32 = 0;
 pub const LE_ST_IAU_2006: i32 = 1;
-pub const OE_ST_IERS_2010: i32 = 2;
-pub const OE_ST_LONG_TERM: i32 = 3;
+pub const LE_ST_IERS_2010: i32 = 2;
+pub const LE_ST_LONG_TERM: i32 = 3;
 pub const LE_NMODES_ST: i32 = 4;
 
 // Frame bias model IDs
-pub const OE_BIAS_NONE: i32 = 0;
-pub const OE_BIAS_IAU_2000: i32 = 1;
+pub const LE_BIAS_NONE: i32 = 0;
+pub const LE_BIAS_IAU_2000: i32 = 1;
 pub const LE_BIAS_IAU_2006: i32 = 2;
 pub const LE_NMODES_BIAS: i32 = 3;
 
 // JPL Horizons approximation mode
 pub const LE_HOR_APPROX_NONE: i32 = 0;
-pub const OE_HOR_APPROX_STANDARD: i32 = 1;
-pub const OE_HOR_APPROX_REFINED: i32 = 2;
+pub const LE_HOR_APPROX_STANDARD: i32 = 1;
+pub const LE_HOR_APPROX_REFINED: i32 = 2;
 
 // Error codes (negative = error, 0+ = success with info)
 pub const LE_OK: i32 = 0;
-pub const OE_ERR: i32 = -1;
+pub const LE_ERR: i32 = -1;
 pub const LE_ERR_INVALID_PARAMS: i32 = -2;
 pub const ERR_FILE_NOT_FOUND: i32 = -3;
 pub const ERR_OUT_OF_RANGE: i32 = -4;
@@ -198,7 +198,7 @@ pub const ERR_UNKNOWN_BODY: i32 = -12;
 
 // Output array indices for le_calc etc.
 // The output xx array is 6 doubles for position+velocity.
-// With OE_SIDEREAL or additional flags, up to 24 doubles.
+// With LE_SIDEREAL or additional flags, up to 24 doubles.
 pub const LE_X: usize = 0;
 pub const LE_Y: usize = 1;
 pub const LE_Z: usize = 2;
@@ -209,8 +209,8 @@ pub const LE_VZ: usize = 5;
 pub const LE_RA: usize = 0;
 pub const LE_DEC: usize = 1;
 pub const LE_DIST: usize = 2;
-pub const OE_RA_DOT: usize = 3;
-pub const OE_DEC_DOT: usize = 4;
+pub const LE_RA_DOT: usize = 3;
+pub const LE_DEC_DOT: usize = 4;
 pub const LE_DIST_DOT: usize = 5;
 
 pub const LE_LON: usize = 0;
@@ -233,9 +233,9 @@ pub const LE_B1950: f64 = 2433282.4235;
 pub const LE_J1900: f64 = 2415020.0;
 
 // Days per unit time
-pub const OE_DAY_PER_YEAR: f64 = 365.25;
+pub const LE_DAY_PER_YEAR: f64 = 365.25;
 pub const LE_DAY_PER_CENTURY: f64 = 36525.0;
-pub const OE_DAY_PER_MILLENNIUM: f64 = 365250.0;
+pub const LE_DAY_PER_MILLENNIUM: f64 = 365250.0;
 
 // Angles
 pub const LE_DEG: f64 = 0.017453292519943295; // π/180

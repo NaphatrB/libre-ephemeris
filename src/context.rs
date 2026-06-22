@@ -216,7 +216,7 @@ pub unsafe extern "C" fn le_set_topo(geolon: f64, geolat: f64, geoalt: f64) {
 
 /// C ABI: set sidereal (ayanamsa) mode.
 #[no_mangle]
-pub unsafe extern "C" fn oe_set_sid_mode(sid_mode: i32, t0: f64, ayan_t0: f64) {
+pub unsafe extern "C" fn le_set_sid_mode(sid_mode: i32, t0: f64, ayan_t0: f64) {
     with_default(|ctx| ctx.set_sid_mode(sid_mode, t0, ayan_t0));
 }
 
@@ -228,7 +228,7 @@ pub unsafe extern "C" fn le_set_delta_t_user(dt: f64) {
 
 /// C ABI: set tidal acceleration (arcsec/cy²).
 #[no_mangle]
-pub unsafe extern "C" fn oe_set_tid_acc(acc: f64) {
+pub unsafe extern "C" fn le_set_tid_acc(acc: f64) {
     with_default(|ctx| ctx.set_tid_acc(acc));
 }
 

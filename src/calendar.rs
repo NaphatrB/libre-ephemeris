@@ -89,7 +89,7 @@ pub fn revjul(jd: f64, gregflag: i32) -> (i32, i32, f64) {
 
 /// Convert date to Julian day number, Gregorian calendar assumed.
 #[no_mangle]
-pub unsafe extern "C" fn oe_julday(
+pub unsafe extern "C" fn le_julday(
     year: i32, month: i32, day: f64, gregflag: i32,
 ) -> f64 {
     julday(year, month, day, gregflag)
@@ -97,7 +97,7 @@ pub unsafe extern "C" fn oe_julday(
 
 /// Convert Julian day number to calendar date.
 #[no_mangle]
-pub unsafe extern "C" fn oe_revjul(
+pub unsafe extern "C" fn le_revjul(
     jd: f64, gregflag: i32,
     year: *mut i32, month: *mut i32, day: *mut f64,
 ) {
@@ -112,7 +112,7 @@ pub unsafe extern "C" fn oe_revjul(
 /// Compute day of week from Julian day.
 /// Returns 0=Monday ... 6=Sunday.
 #[no_mangle]
-pub unsafe extern "C" fn oe_day_of_week(jd: f64) -> i32 {
+pub unsafe extern "C" fn le_day_of_week(jd: f64) -> i32 {
     ((jd + 1.5) % 7.0) as i32
 }
 

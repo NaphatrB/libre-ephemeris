@@ -426,7 +426,7 @@ pub unsafe extern "C" fn le_calc(
 /// # Arguments
 /// * `tjd_ut` - Julian day in Universal Time
 /// * `ipl` - Planet index (0=Sun, 1=Moon, 2=Mercury, ..., 9=Pluto, 10=Chiron, 17=Earth)
-/// * `iflag` - Bitmask of OE_FLG_* flags controlling output frame, coordinate system, corrections
+/// * `iflag` - Bitmask of LE_FLG_* flags controlling output frame, coordinate system, corrections
 /// * `xx` - Output array of 24 doubles: [x, y, z, vx, vy, vz, ...]
 /// * `serr` - Error string buffer (256 bytes), zeroed on success
 ///
@@ -464,7 +464,7 @@ pub unsafe extern "C" fn le_calc_ut(
 
 /// C ABI: solar eclipse calculation.
 #[no_mangle]
-pub unsafe extern "C" fn oe_sol_eclipse_how(
+pub unsafe extern "C" fn le_sol_eclipse_how(
     tjd: f64,
     _iflag: i32,
     attr: *mut f64,
@@ -481,7 +481,7 @@ pub unsafe extern "C" fn oe_sol_eclipse_how(
 
 /// C ABI: lunar eclipse calculation.
 #[no_mangle]
-pub unsafe extern "C" fn oe_lun_eclipse_how(
+pub unsafe extern "C" fn le_lun_eclipse_how(
     tjd: f64,
     _iflag: i32,
     attr: *mut f64,
