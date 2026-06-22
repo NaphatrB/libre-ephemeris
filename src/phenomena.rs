@@ -61,16 +61,19 @@ pub fn illuminated_fraction(i: f64) -> f64 {
 ///
 /// Uses the standard formula: V = V(1,0) + 5*log10(r*Δ) + β*i
 /// where V(1,0) is the absolute magnitude, r is heliocentric distance,
-/// Δ is geocentric distance, i is phase angle, and β is the phase coefficient.
+/// Δ is geocentric distance, i is phase angle in degrees, and β is the phase coefficient.
+///
+/// Coefficients from Meeus "Astronomical Algorithms" (1998) and
+/// Mallama & Hilton (2018) for improved accuracy.
 ///
 /// Arguments:
 /// - `body`: planet index (LE_MERCURY..LE_NEPTUNE)
 /// - `r_au`: heliocentric distance (AU)
 /// - `delta_au`: geocentric distance (AU)
-/// - `i`: phase angle (radians)
-pub fn apparent_magnitude(body: i32, r_au: f64, delta_au: f64, i: f64) -> f64 {
+/// - `i_deg`: phase angle in degrees
+pub fn apparent_magnitude(body: i32, r_au: f64, delta_au: f64, i_deg: f64) -> f64 {
     let (v0, beta) = match body {
-        constants::LE_MERCURY => (-0.42, 0.038),
+        constants::LE_MERCURY => (-0.60, 0.040),
         constants::LE_VENUS => (-4.40, 0.013),
         constants::LE_MARS => (-1.52, 0.016),
         constants::LE_JUPITER => (-9.40, 0.005),
@@ -80,7 +83,7 @@ pub fn apparent_magnitude(body: i32, r_au: f64, delta_au: f64, i: f64) -> f64 {
         _ => return 0.0,
     };
     let dist_term = 5.0 * (r_au * delta_au).log10();
-    let phase_term = beta * i;
+    let phase_term = beta * i_deg;
     v0 + dist_term + phase_term
 }
 

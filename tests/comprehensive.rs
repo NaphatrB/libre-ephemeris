@@ -407,10 +407,10 @@ fn test_all_planets_phenomena() {
         // Elongation
         let elong_our = libre_ephemeris::phenomena::elongation(&xx_sun[0..3].try_into().unwrap(), &xx[0..3].try_into().unwrap());
 
-        // Magnitude
+        // Magnitude (phase_our is in degrees, apparent_magnitude takes degrees)
         let r = (sun_to_body[0]*sun_to_body[0] + sun_to_body[1]*sun_to_body[1] + sun_to_body[2]*sun_to_body[2]).sqrt();
         let delta = (obs_to_body[0]*obs_to_body[0] + obs_to_body[1]*obs_to_body[1] + obs_to_body[2]*obs_to_body[2]).sqrt();
-        let mag_our = libre_ephemeris::phenomena::apparent_magnitude(pl, r, delta, phase_our * constants::LE_DEG);
+        let mag_our = libre_ephemeris::phenomena::apparent_magnitude(pl, r, delta, phase_our);
 
         let phase_diff = (phase_csv - phase_our).abs();
         let mag_diff = (mag_csv - mag_our).abs();
@@ -503,8 +503,9 @@ fn test_houses_swetest() {
         }
         count += 1;
     }
-    println!("Houses: {} positions, max cusp diff={:.4}°, max asc diff={:.4}°, max MC diff={:.4}° (informational — different house numbering conventions)",
+    println!("Houses: {} positions, max cusp diff={:.4}°, max asc diff={:.4}°, max MC diff={:.4}° (cusp/MC: different numbering conventions)",
              count, max_cusp_diff, max_asc_diff, max_mc_diff);
+    assert!(max_asc_diff < 1.0, "Max asc diff {:.4}° exceeds 1.0°", max_asc_diff);
 }
 
 /// Test topocentric positions.

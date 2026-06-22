@@ -95,26 +95,16 @@ fn obliquity(jd: f64) -> f64 {
 fn ascendant(ramc: f64, phi: f64, eps: f64) -> f64 {
     let ramc_rad = ramc * constants::LE_DEG;
     let phi_rad = phi * constants::LE_DEG;
-    let eps_rad = eps; // already in radians
+    let eps_rad = eps;
 
-    let asc = (-ramc_rad.sin() * eps_rad.cos()
-        + phi_rad.tan() * eps_rad.sin())
-    .atan2(ramc_rad.cos());
+    let asc = (-ramc_rad.cos())
+        .atan2(eps_rad.cos() * ramc_rad.sin() - phi_rad.tan() * eps_rad.sin());
 
     let mut asc_deg = asc / constants::LE_DEG;
     if asc_deg < 0.0 {
-        asc_deg += 180.0;
-    }
-    // Adjust to the correct quadrant
-    if asc_deg < 180.0 && ramc_deg_to_check(ramc) {
-        asc_deg += 180.0;
+        asc_deg += 360.0;
     }
     csnorm(asc_deg)
-}
-
-fn ramc_deg_to_check(ramc: f64) -> bool {
-    let r = ramc % 360.0;
-    r < 180.0
 }
 
 /// Compute MC (Midheaven) from RAMC.

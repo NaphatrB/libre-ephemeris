@@ -16,6 +16,13 @@ vsop87 = "3.0"
 [build-dependencies]
 cbindgen = "0.28"
 
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "calc"
+harness = false
+
 [features]
 default = ["jpl", "analytical"]
 jpl = []
