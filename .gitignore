@@ -6,3 +6,4 @@ package.json
 accuracy_report.csv
 validation_test_set.csv
 swetest
+plan.md
