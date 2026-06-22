@@ -107,9 +107,13 @@ fn ascendant(ramc: f64, phi: f64, eps: f64) -> f64 {
     csnorm(asc_deg)
 }
 
-/// Compute MC (Midheaven) from RAMC.
-fn mc(ramc: f64) -> f64 {
-    csnorm(ramc)
+/// Compute MC (Midheaven) from RAMC and obliquity.
+/// MC is the ecliptic longitude of the point where the meridian
+/// intersects the ecliptic. This is NOT the same as RAMC.
+fn mc(ramc: f64, eps: f64) -> f64 {
+    let ramc_rad = ramc * constants::LE_DEG;
+    let lon = (ramc_rad.sin() * eps.cos()).atan2(ramc_rad.cos());
+    csnorm(lon / constants::LE_DEG)
 }
 
 /// Calculate house cusps for a given system.
@@ -140,7 +144,7 @@ pub fn houses(
 
     // Compute Ascendant and MC
     let asc = ascendant(lst, phi, eps_rad);
-    let mc_val = mc(lst);
+    let mc_val = mc(lst, eps_rad);
 
     ascmc[0] = asc;            // Ascendant
     ascmc[1] = mc_val;         // MC
@@ -679,7 +683,7 @@ fn houses_porphyrius(
 ) -> i32 {
     let lst = (armc + 90.0) % 360.0;
     let asc = ascendant(lst, phi, eps);
-    let mc_val = mc(armc);
+    let mc_val = mc(armc, eps);
     let desc = csnorm(asc + 180.0);
     let ic = csnorm(mc_val + 180.0);
 

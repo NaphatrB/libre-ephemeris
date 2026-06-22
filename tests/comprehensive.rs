@@ -410,7 +410,20 @@ fn test_all_planets_phenomena() {
         // Magnitude (phase_our is in degrees, apparent_magnitude takes degrees)
         let r = (sun_to_body[0]*sun_to_body[0] + sun_to_body[1]*sun_to_body[1] + sun_to_body[2]*sun_to_body[2]).sqrt();
         let delta = (obs_to_body[0]*obs_to_body[0] + obs_to_body[1]*obs_to_body[1] + obs_to_body[2]*obs_to_body[2]).sqrt();
-        let mag_our = libre_ephemeris::phenomena::apparent_magnitude(pl, r, delta, phase_our);
+        let mut mag_our = libre_ephemeris::phenomena::apparent_magnitude(pl, r, delta, phase_our);
+
+        // Saturn ring correction: get ecliptic coordinates
+        if pl == 6 {
+            let ecl_flags = constants::LE_FLG_XYZ | constants::LE_FLG_ECLIPTIC | constants::LE_FLG_J2000
+                | constants::LE_FLG_NOABERR | constants::LE_FLG_NOGDEFL | constants::LE_FLG_NOBIRR | constants::LE_FLG_NONUT;
+            let mut xx_ecl = [0.0_f64; 24];
+            let rc_ecl = unsafe { le_calc_ut(jd, 6, ecl_flags, xx_ecl.as_mut_ptr(), serr.as_mut_ptr()) };
+            if rc_ecl == 0 {
+                let sat_lon = xx_ecl[0];
+                let sat_lat = xx_ecl[1];
+                mag_our += libre_ephemeris::phenomena::saturn_ring_correction(sat_lon, sat_lat);
+            }
+        }
 
         let phase_diff = (phase_csv - phase_our).abs();
         let mag_diff = (mag_csv - mag_our).abs();
@@ -421,8 +434,11 @@ fn test_all_planets_phenomena() {
         if elong_diff > max_elong_diff { max_elong_diff = elong_diff; }
         count += 1;
     }
-    println!("Phenomena: {} positions, max phase diff={:.4}°, max mag diff={:.4}, max elong diff={:.4}° (informational — different magnitude models)",
+    println!("Phenomena: {} positions, max phase diff={:.4}°, max mag diff={:.4}, max elong diff={:.4}° (mag: Saturn uses different model than swetest)",
              count, max_phase_diff, max_mag_diff, max_elong_diff);
+    assert!(max_phase_diff < 1.0, "Max phase diff {:.4}° exceeds 1.0°", max_phase_diff);
+    assert!(max_mag_diff < 10.0, "Max mag diff {:.4} exceeds 10.0", max_mag_diff);
+    assert!(max_elong_diff < 1.0, "Max elong diff {:.4}° exceeds 1.0°", max_elong_diff);
 }
 
 /// Test Delta T against swetest.
