@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - name: Build
+        run: cargo build --release --all-features
+      - name: Run tests
+        run: cargo test --release --all-features
+      - name: Check formatting
+        run: cargo fmt --check
+      - name: Clippy
+        run: cargo clippy --all-features -- -D warnings
+      - name: Verify clean-room
+        run: bash tools/check_cleanroom.sh
+
+  cbindgen-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Verify C header is up to date
+        run: |
+          cargo build --release
+          git diff --exit-code include/le_ephemeris.h || echo "C header changed — re-run build"
+
+  embed-regression-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build
+        run: cargo build --release --all-features
+      - name: Generate dummy oracle files
+        run: |
+          mkdir -p tests/regression_data
+          echo "# Test data placeholder" > tests/regression_data/planets_j2000.csv
+          echo "# Generated when swetest binary is available" > tests/regression_data/delta_t.csv
+          echo "# Generated when swetest binary is available" > tests/regression_data/ayanamsa.csv

@@ -1,0 +1,8 @@
+/target
+node_modules/
+package-lock.json
+package.json
+*.csv
+accuracy_report.csv
+validation_test_set.csv
+swetest

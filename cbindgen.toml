@@ -1,0 +1,13 @@
+language = "C"
+autolock = false
+include_guard = "OE_EPHEMERIS_H"
+no_includes = true
+documentation = true
+
+[defines]
+"feature = jpl" = "OE_WITH_JPL"
+"feature = analytical" = "OE_WITH_ANALYTICAL"
+
+[parse]
+parse_deps = false
+include = ["libre_ephemeris"]

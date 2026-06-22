@@ -1,0 +1,23 @@
+[package]
+name = "libre-ephemeris"
+version = "0.2.0"
+edition = "2021"
+description = "A clean-room MIT-licensed astronomical computation library"
+license = "MIT"
+repository = "https://github.com/NaphatrB/libre-ephemeris"
+
+[lib]
+name = "libre_ephemeris"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[dependencies]
+vsop87 = "3.0"
+
+[build-dependencies]
+cbindgen = "0.28"
+
+[features]
+default = ["jpl", "analytical"]
+jpl = []
+analytical = []
+
